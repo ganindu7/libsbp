@@ -224,4 +224,5 @@ definitions:
           type: string
           desc: |
             A NULL-terminated and delimited string with contents
-            "SECTION_SETTING\0SETTING\0VALUE".
+            "SECTION_SETTING\0SETTING\0VALUE". The meaning of value is defined
+            according to the status field.
