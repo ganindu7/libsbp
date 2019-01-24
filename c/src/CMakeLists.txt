@@ -33,6 +33,7 @@ set(libsbp_SRCS
 )
 
 add_library(sbp ${libsbp_SRCS})
+target_compile_options(sbp PUBLIC "-fPIC")
 target_include_directories(sbp PUBLIC "${PROJECT_SOURCE_DIR}/include")
 install(TARGETS sbp DESTINATION lib${LIB_SUFFIX})
 install(FILES ${libsbp_HEADERS} DESTINATION include/libsbp)
