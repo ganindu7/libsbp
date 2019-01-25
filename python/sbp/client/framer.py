@@ -128,7 +128,7 @@ class Framer(object):
             pass
         return msg
 
-    def __call__(self, msg, **metadata):
+    def __call__(self, *msgs, **metadata):
         """
         Build and write SBP message.
 
@@ -139,4 +139,4 @@ class Framer(object):
         metadata : dict
           {'time': 'ISO 8601 str'} (ignored for now)
         """
-        self._write(msg.to_binary())
+        self._write(bytes.join(b'', (msg.to_binary() for msg in msgs)))
